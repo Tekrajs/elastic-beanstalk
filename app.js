@@ -1,7 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-hike = require('./routes/hike');
+var pages = require('./routes/pages');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -9,8 +9,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-app.get('/hikes', hike.index);
-app.post('/add_hike', hike.add_hike);
+
+//app.get('/pages', pages.index);
+//app.post('/blogs', blogs.add_blogs);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,5 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//app.listen(8000);
 
 module.exports = app;

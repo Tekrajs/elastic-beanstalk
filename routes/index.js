@@ -5,7 +5,7 @@ var pagecontroller = require(path.join(__dirname+'/../controllers/pages/PageCont
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Hashing System',message:'Welcome to the future...' });
 });
 
 router.get('/pages',pagecontroller.index);
